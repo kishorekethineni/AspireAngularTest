@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+	</head>
+    <div class="container">
+	<body>
+
+		<!-- <div class="wrapper" align=auto style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO4PN-UaNWzXKvnY5PO9w9_lmDOIsc0uN8ig&usqp=CAU');"> -->
+			<div class="inner">
+				<div class="image-holder">
+					<img src="https://www.aspiresys.com/corporate/aspire-systems-business-continuity-during-COVID-19/img/aspire-logo-violet.png" alt="">
+				</div>
+				<form>
+					<h3>Employee Details List</h3>
+                    <div class="table">
+                        <thead>
+                            <th>EmployeeID</th>
+                            <th>EmployeeName</th>
+                            <th>DateOfBirth</th>
+                            <th>Age</th>
+                            <th>Phonenumber</th>
+                            <th>Email</th>
+                            <th>DateOfJoining</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of employeeDetails">
+                                <td>{{row.EmployeeId}}</td>
+                                <td>{{row.EmployeeName}}</td>
+                                <td>{{row.DateOfBirth}}</td>
+                                <td>{{row.Age}}</td>
+                                <td>{{row.PhoneNumber}}</td>
+                                <td>{{row.Email}}</td>
+                                <td>{{row.DateOfJoining}}</td>
+                                <td> <a routerLink="/UpdateEmployeeDetails/{{row.EmployeeId}}">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                  </a> &nbsp; <a href="#"  (click)="deleteResto(row.EmployeeId)">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                  </a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </div>
+
+                    
+				</form>
+			
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    </div>
+</html>
+

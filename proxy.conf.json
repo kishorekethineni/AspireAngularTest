@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://ancient-harbor-78065.herokuapp.com/api/employees",
+      "secure": false
+    }
+  }

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" align=auto style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO4PN-UaNWzXKvnY5PO9w9_lmDOIsc0uN8ig&usqp=CAU');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="https://www.aspiresys.com/corporate/aspire-systems-business-continuity-during-COVID-19/img/aspire-logo-violet.png" alt="">
+				</div>
+				<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+					<h3>Employee Details</h3> &nbsp;&nbsp; &nbsp;
+          <div class="row">
+					<div class="form-group">
+            <div class="col">
+						<input type="text" placeholder="EmpID" class="form-control"  formControlName="employeeID" [(ngModel)]="employeeDetails.employeeID" required>
+            <div *ngIf="getControl.employeeID.touched && getControl.employeeID.invalid" class="text-danger">
+              <div *ngIf="getControl.employeeID.errors.required">EmployeeID is required.</div>
+              <div *ngIf="getControl.employeeID.errors?.minlength">Minimum 4 character are required.</div>
+            </div>
+            </div><br>
+            <div class="col">
+            <input type="text" placeholder="EmpName" class="form-control" formControlName="employeeName" [(ngModel)]="employeeDetails.employeeName" required>
+            <div *ngIf="getControl.employeeName.touched && getControl.employeeName.invalid" class="text-danger">
+              <div *ngIf="getControl.employeeName.errors.required">EmployeeName is required.</div>
+              <div *ngIf="getControl.employeeName.errors?.minlength">Minimum 4 character are required.</div>
+            </div>
+					</div>
+          </div>
+          </div>
+					<div class="form-wrapper">
+						<td>DOB:</td><input type="date" placeholder="Date of Birth" class="form-control" formControlName="dateOfBirth" [(ngModel)]="employeeDetails.dateOfBirth" required>
+						<div *ngIf="getControl.dateOfBirth.touched && getControl.dateOfBirth.invalid" class="text-danger">
+              <div *ngIf="getControl.dateOfBirth.errors.required">DateOfBirth is required.</div>
+              <!-- <div *ngIf="getControl.employeeName.errors?.minlength">Minimum 4 character are required.</div> -->
+            </div>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Age" class="form-control" formControlName="age"  [(ngModel)]="employeeDetails.age"required>
+            <div *ngIf="getControl.age.touched && getControl.age.invalid" class="text-danger">
+              <div *ngIf="getControl.age.errors.required">Age is required.</div>
+              <!-- <div *ngIf="getControl.employeeName.errors?.minlength">Minimum 4 character are required.</div> -->
+            </div>
+					</div>
+					<div class="form-wrapper">
+						<input type="number" placeholder="Phone Number" class="form-control" formControlName="phonenumber" [(ngModel)]="employeeDetails.phonenumber" required>
+            <div *ngIf="getControl.phonenumber.touched && getControl.phonenumber.invalid" class="text-danger">
+              <div *ngIf="getControl.phonenumber.errors.required">PhoneNumber is required.</div>
+              <!-- <div *ngIf="getControl.employeeName.errors?.minlength">Minimum 4 character are required.</div> -->
+            </div>
+					</div>
+					<div class="form-wrapper">
+						<input type="email" placeholder="Email" class="form-control" formControlName="email" [(ngModel)]="employeeDetails.email" required >
+						<i class="zmdi zmdi-email"></i>
+            <div *ngIf="getControl.email.touched && getControl.email.invalid" class="text-danger">
+              <div *ngIf="getControl.email.errors.required">Email is required.</div>
+              <!-- <div *ngIf="getControl.employeeName.errors?.minlength">Minimum 4 character are required.</div> -->
+            </div>
+					</div>
+					<div class="form-wrapper">
+						<td>DOj:</td><input type="date" placeholder="doj" class="form-control" formControlName="dateOfJoining" [(ngModel)]="employeeDetails.dateOfJoining" required>
+            <div *ngIf="getControl.dateOfJoining.touched && getControl.dateOfJoining.invalid" class="text-danger">
+              <div *ngIf="getControl.dateOfJoining.errors.required">DateOfJoining is required.</div>
+              <!-- <div *ngIf="getControl.employeeName.errors?.minlength">Minimum 4 character are required.</div> -->
+            </div>
+					</div>
+					<button  [disabled]="!userForm.valid">UpdateEmpDetails
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+
